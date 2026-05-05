@@ -44,12 +44,11 @@
             <div class="box">
                 <h3>Account Specs</h3>
                 <table>
-                    <tr><th>Tier</th><th>DLL</th><th>Drawdown</th><th>Max Micros</th></tr>
-                    <tr><td>$25K</td><td>$500</td><td>$1,500</td><td>40</td></tr>
-                    <tr><td>$50K</td><td>$1,250</td><td>$2,500</td><td>80</td></tr>
-                    <tr><td>$75K</td><td>$2,000</td><td>$3,500</td><td>120</td></tr>
-                    <tr><td>$100K</td><td>$2,500</td><td>$4,500</td><td>160</td></tr>
-                    <tr><td>$150K</td><td>$3,500</td><td>$6,000</td><td>240</td></tr>
+                    <tr><th>Tier</th><th>Profit</th><th>DLL</th><th>Drawdown</th><th>Max Micros</th></tr>
+                    <tr><td>$25K</td><td>$1,500</td><td>$500</td><td>$1,000</td><td>40</td></tr>
+                    <tr><td>$50K</td><td>$3,000</td><td>$1,000</td><td>$2,000</td><td>60</td></tr>
+                    <tr><td>$100K</td><td>$6,000</td><td>$1,500</td><td>$3,000</td><td>80</td></tr>
+                    <tr><td>$150K</td><td>$9,000</td><td>$2,000</td><td>$4,000</td><td>120</td></tr>
                 </table>
             </div>
 
@@ -67,11 +66,11 @@
             <div class="box">
                 <h3>30% Consistency Rule</h3>
                 <ul>
-                    <li>No single day > <span class="highlight">30% of total profit</span></li>
-                    <li>+$900 day / $1,000 total = 90% = <span class="highlight">FAIL</span></li>
-                    <li>Target: 15+ trading days, spread profit evenly</li>
-                    <li>2 trades/day sweet spot for 30-day eval</li>
-                    <li>One massive winner = automatic failure</li>
+                    <li>Applies at <span class="highlight">payout request</span>, NOT during evaluation</li>
+                    <li>No single day > 50% of total profit since last payout (30% legacy)</li>
+                    <li>+$1,500 best day → need $3,000 total (50%) or $5,000 (30%)</li>
+                    <li>Rule <span class="highlight">gone after 6th approved payout</span></li>
+                    <li>Spread profit across days before requesting payout</li>
                 </ul>
             </div>
 
@@ -79,10 +78,10 @@
                 <h3>Daily Loss Limit (DLL)</h3>
                 <ul>
                     <li>Most NT strategies have <span class="highlight">zero</span> DLL enforcement</li>
-                    <li>3 × $400 losses = $1,200. One more = breach.</li>
-                    <li>Track <span class="highlight">real-time</span> realized + unrealized PnL</li>
+                    <li>Does <span class="highlight">NOT fail evaluation</span> — resets next day</li>
+                    <li>$50K example: 2 × $400 losses = $800. Next trade = near limit.</li>
                     <li>Halt trading when within $100 of limit</li>
-                    <li>Reset at 5 PM ET / midnight UTC</li>
+                    <li>Only applies to EOD accounts; intraday eval has no DLL</li>
                 </ul>
             </div>
 
@@ -98,8 +97,8 @@
                     <ul>
                         <li>Profit target at 1.5x–2.0x stop? <strong>CHECK</strong></li>
                         <li>No overnight positions planned? <strong>CHECK</strong></li>
-                        <li>Consistency: is today already 30% of profit? <strong>CHECK</strong></li>
-                        <li>Flat by 4 PM ET confirmed? <strong>CHECK</strong></li>
+                        <li>Daily PnL within DLL safety margin? <strong>CHECK</strong></li>
+                        <li>Flat by 4:59 PM ET confirmed? <strong>CHECK</strong></li>
                     </ul>
                 </div>
             </div>

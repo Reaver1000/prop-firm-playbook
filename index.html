@@ -82,15 +82,15 @@
         <div class="problem-grid">
             <div class="card">
                 <h3>The Trailing Drawdown Trap</h3>
-                <p>The drawdown is NOT a fixed number. It trails your highest balance. A trader who peaks at $51,200 on a $50K account can fail at $49,000 — despite being up $1,900 overall.</p>
+                <p>The drawdown is NOT a fixed number. It trails your highest balance. On a $50K account, peak at $51,500 and the floor moves to $49,500. Give back $1,000 — you're at $50,500, still up $500. One more $600 loss and you're at $49,900. Breached. Despite being down only $100 from where you started.</p>
             </div>
             <div class="card">
                 <h3>The 30% Consistency Rule</h3>
-                <p>One big winning day can fail your entire evaluation. A +$900 day that is 80% of total profit = automatic failure. Even profitable traders get caught.</p>
+                <p>Applies at payout request, NOT during evaluation. No single day can exceed 50% of total profit since last payout (30% legacy). A $1,500 best day means you need $3,000 total before requesting payout. Rule gone after 6th approved payout.</p>
             </div>
             <div class="card">
                 <h3>The DLL Blind Spot</h3>
-                <p>Most NinjaTrader strategies have zero Daily Loss Limit enforcement. Three $400 losses on a $50K account ($1,200) and one more trade breaches the $1,250 DLL.</p>
+                <p>Most NinjaTrader strategies have zero Daily Loss Limit enforcement. On a $50K account, two $400 losses ($800) and you're one trade away from the $1,000 DLL. It does NOT fail your evaluation — it resets tomorrow. But hit it today and you're done trading until 5 PM ET.</p>
             </div>
             <div class="card">
                 <h3>Contract Sizing Disqualification</h3>
@@ -105,7 +105,7 @@
             <ul>
                 <li>The Trailing Drawdown Trap — exact math with real examples</li>
                 <li>The Daily Loss Limit (DLL) Circuit Breaker — account-size tables</li>
-                <li>The 30% Consistency Rule Killer — why profitable traders fail</li>
+                <li>The 30% Consistency Rule — why it blocks payouts, not evaluations</li>
                 <li>Contract Sizing by Account Tier — max micros and e-minis</li>
                 <li>Overnight &amp; Weekend Position Rules</li>
                 <li>The Automated Trading Ban (Eval vs. Funded)</li>
@@ -154,7 +154,7 @@
         <div class="problem-grid">
             <div class="card">
                 <h3>Max Contract Clamp</h3>
-                <p>Never submit more contracts than your account tier allows. Configurable: $25K=40, $50K=80, $75K=120, $100K=160, $150K=240.</p>
+                <p>Never submit more contracts than your account tier allows. Configurable: $25K=40, $50K=60, $100K=80, $150K=120. Apex limits are lower than most traders expect.</p>
             </div>
             <div class="card">
                 <h3>Daily Loss Limit Halt</h3>
