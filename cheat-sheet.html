@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Trader Funding — Prop Firm Cheat Sheet</title>
+    <style>
+        @media print {
+            @page { size: A4 portrait; margin: 12mm; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none; }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff; color: #111; font-size: 9.5pt; line-height: 1.35; }
+        .sheet { max-width: 210mm; margin: 0 auto; padding: 10mm; }
+        header { text-align: center; border-bottom: 2px solid #ff4757; padding-bottom: 6px; margin-bottom: 8px; }
+        header h1 { font-size: 14pt; color: #ff4757; margin-bottom: 2px; }
+        header p { font-size: 8pt; color: #555; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+        .box { border: 1px solid #ddd; border-radius: 4px; padding: 6px; }
+        .box h3 { font-size: 9pt; color: #ff4757; margin-bottom: 4px; border-bottom: 1px solid #eee; padding-bottom: 2px; }
+        .box table { width: 100%; border-collapse: collapse; font-size: 8pt; }
+        .box th, .box td { padding: 2px 4px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+        .box th { background: #fafafa; font-weight: 600; }
+        .highlight { background: #fff3f3; padding: 1px 3px; border-radius: 2px; font-weight: 600; }
+        .full { grid-column: 1 / -1; }
+        ul { padding-left: 14px; font-size: 8.5pt; }
+        li { margin-bottom: 2px; }
+        .footer { text-align: center; font-size: 7pt; color: #888; margin-top: 6px; border-top: 1px solid #eee; padding-top: 4px; }
+        .no-print { text-align: center; margin: 10px 0; }
+        .no-print button { background: #ff4757; color: #fff; border: none; padding: 8px 24px; border-radius: 4px; cursor: pointer; font-size: 10pt; }
+    </style>
+</head>
+<body>
+    <div class="no-print"><button onclick="window.print()">Print / Save as PDF</button></div>
+
+    <div class="sheet">
+        <header>
+            <h1>Apex Trader Funding — Prop Firm Cheat Sheet</h1>
+            <p>Read this before every session. Tape it to your monitor. Pass the rules first.</p>
+        </header>
+
+        <div class="grid">
+            <div class="box">
+                <h3>Account Specs</h3>
+                <table>
+                    <tr><th>Tier</th><th>DLL</th><th>Drawdown</th><th>Max Micros</th></tr>
+                    <tr><td>$25K</td><td>$500</td><td>$1,500</td><td>40</td></tr>
+                    <tr><td>$50K</td><td>$1,250</td><td>$2,500</td><td>80</td></tr>
+                    <tr><td>$75K</td><td>$2,000</td><td>$3,500</td><td>120</td></tr>
+                    <tr><td>$100K</td><td>$2,500</td><td>$4,500</td><td>160</td></tr>
+                    <tr><td>$150K</td><td>$3,500</td><td>$6,000</td><td>240</td></tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Trailing Drawdown Trap</h3>
+                <ul>
+                    <li>Drawdown <span class="highlight">TRAILS</span> highest balance. Never resets down.</li>
+                    <li>$50K peak $51,200 → floor $48,700</li>
+                    <li>Drop to $49,000 = $300 from failure</li>
+                    <li>Updates at <span class="highlight">4:59:59 PM ET</span></li>
+                    <li>Flat by 4 PM. Every day.</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>30% Consistency Rule</h3>
+                <ul>
+                    <li>No single day > <span class="highlight">30% of total profit</span></li>
+                    <li>+$900 day / $1,000 total = 90% = <span class="highlight">FAIL</span></li>
+                    <li>Target: 15+ trading days, spread profit evenly</li>
+                    <li>2 trades/day sweet spot for 30-day eval</li>
+                    <li>One massive winner = automatic failure</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Daily Loss Limit (DLL)</h3>
+                <ul>
+                    <li>Most NT strategies have <span class="highlight">zero</span> DLL enforcement</li>
+                    <li>3 × $400 losses = $1,200. One more = breach.</li>
+                    <li>Track <span class="highlight">real-time</span> realized + unrealized PnL</li>
+                    <li>Halt trading when within $100 of limit</li>
+                    <li>Reset at 5 PM ET / midnight UTC</li>
+                </ul>
+            </div>
+
+            <div class="box full">
+                <h3>Pre-Trade Checklist — Read Before Every Session</h3>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <ul>
+                        <li>Account above drawdown floor? <strong>CHECK</strong></li>
+                        <li>DLL not hit today? <strong>CHECK</strong></li>
+                        <li>Position size within max micros? <strong>CHECK</strong></li>
+                        <li>Stop set BEFORE entry? <strong>CHECK</strong></li>
+                    </ul>
+                    <ul>
+                        <li>Profit target at 1.5x–2.0x stop? <strong>CHECK</strong></li>
+                        <li>No overnight positions planned? <strong>CHECK</strong></li>
+                        <li>Consistency: is today already 30% of profit? <strong>CHECK</strong></li>
+                        <li>Flat by 4 PM ET confirmed? <strong>CHECK</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Contract Sizing</h3>
+                <ul>
+                    <li>MNQ: 1 tick = $0.50. 1 point = $2.</li>
+                    <li>MES: 1 tick = $1.25. 1 point = $5.</li>
+                    <li>ES: 1 tick = $12.50. 1 point = $50.</li>
+                    <li>Formula: qty = floor(Risk$ / (StopTicks × TickValue))</li>
+                    <li><span class="highlight">ALWAYS clamp to account max.</span></li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Emergency Protocols</h3>
+                <ul>
+                    <li><strong>Breach imminent:</strong> Flat everything. Walk away.</li>
+                    <li><strong>DLL hit:</strong> No more trades today. Period.</li>
+                    <li><strong>Drawdown floor approached:</strong> Reduce size 50% or stop.</li>
+                    <li><strong>Big winning day:</strong> Check consistency % before next trade.</li>
+                    <li><strong>3 losses in a row:</strong> Mandatory 15-min break.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            Prop Firm Rules Playbook | David Buchan | Not financial advice. Rules as of 2026. Verify with Apex directly.
+        </div>
+    </div>
+</body>
+</html>
