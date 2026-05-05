@@ -115,6 +115,7 @@
                 <li>Emergency Protocols — what to do when things go wrong</li>
                 <li>Appendix: Full Account Specifications ($25K–$150K)</li>
                 <li>BONUS: One-page printable cheat sheet</li>
+                <li>BONUS: Prop-Firm-Safe NinjaTrader 8 Strategy — auto-halts on DLL breach, clamps contract size, tracks trailing drawdown floor</li>
             </ul>
         </div>
     </section>
@@ -147,11 +148,34 @@
         </div>
     </section>
 
+    <section class="container">
+        <h2>Bonus: Prop-Firm-Safe NinjaTrader Strategy</h2>
+        <p style="text-align:center; color:#a0a0b0; max-width:640px; margin:0 auto 24px;">Most NT strategies have zero prop-firm compliance built in. This one does. Free with the playbook.</p>
+        <div class="problem-grid">
+            <div class="card">
+                <h3>Max Contract Clamp</h3>
+                <p>Never submit more contracts than your account tier allows. Configurable: $25K=40, $50K=80, $75K=120, $100K=160, $150K=240.</p>
+            </div>
+            <div class="card">
+                <h3>Daily Loss Limit Halt</h3>
+                <p>Auto-detects when your daily loss approaches the DLL. Flattens all positions and stops trading for the day.</p>
+            </div>
+            <div class="card">
+                <h3>Trailing Drawdown Floor</h3>
+                <p>Tracks your highest unrealized equity and updates the drawdown floor in real time. Halts before you breach.</p>
+            </div>
+            <div class="card">
+                <h3>Free Download</h3>
+                <p><a href="https://github.com/Reaver1000/prop-firm-playbook/blob/master/ninjatrader-strategies/MNQ_ORB_PropFirm_Safe.cs" style="color:#ff6b81; text-decoration:none; font-weight:700;">Download MNQ_ORB_PropFirm_Safe.cs</a> — copy into your NinjaTrader strategies folder, compile, and trade with guardrails.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
         <h2>Stop Losing Evaluations to Invisible Rules</h2>
         <p>Download the playbook. Read it in 30 minutes. Tape the cheat sheet to your monitor. Pass the rules first. Then pass the evaluation.</p>
         <a href="https://gumroad.com/l/prop-firm-playbook" class="cta-main">Get the Playbook — $27</a>
-        <p class="price-tag">Instant PDF download. 30-day money-back guarantee.</p>
+        <p class="price-tag">Instant PDF download + bonus NT strategy. 30-day money-back guarantee.</p>
     </section>
 
     <footer>
